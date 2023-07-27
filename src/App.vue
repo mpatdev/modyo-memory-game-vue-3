@@ -1,5 +1,9 @@
 <script setup>
-import { GameBoard,GameScore } from '@/components'
+import { GameBoard,GameScore, PlayerNameModal } from '@/components'
+import useGamePlayer from '@/composables/useGamePlayer'
+
+const { player } = useGamePlayer()
+
 </script>
 
 <template>
@@ -7,11 +11,16 @@ import { GameBoard,GameScore } from '@/components'
     role="main"
     class="container mx-auto"
   >
-    <div>
-      <GameScore />
+    <div v-if="player">
+      <div>
+        <GameScore />
+      </div>
+      <div>
+        <GameBoard />
+      </div>
     </div>
-    <div>
-      <GameBoard />
+    <div v-else>
+      <PlayerNameModal />
     </div>
   </div>
 </template>

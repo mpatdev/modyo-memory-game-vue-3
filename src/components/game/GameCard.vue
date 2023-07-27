@@ -29,10 +29,9 @@ const altText = computed(() => {
 
 <template>
   <div
-    class="game-card overflow-hidden h-full border 
-    border-black rounded cursor-pointer"
+    class="game-card"
     :class="{
-      'bg-zinc-200 flex items-center justify-center': !isFlipped
+      'game-card--flipped': !isFlipped
     }"
     @click="() => emit('click')"
   >
@@ -78,7 +77,12 @@ const altText = computed(() => {
 }
 
 .game-card {
+  @apply overflow-hidden h-full border border-black rounded cursor-pointer;
   max-height: calc(25dvh - 1em);
+
+  &--flipped {
+    @apply bg-zinc-200 flex items-center justify-center;
+  }
 
   &__center {
     background-image: url('@/assets/images/card-background.png');

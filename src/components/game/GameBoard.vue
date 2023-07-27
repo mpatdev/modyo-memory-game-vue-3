@@ -1,5 +1,5 @@
 <script setup>
-import GameCard from '@/components/GameCard.vue'
+import GameCard from '@/components/game/GameCard.vue'
 import useModyoApi from '@/composables/useModyoApi'
 import useCardGame from '@/composables/useCardGame'
 
@@ -7,9 +7,8 @@ const { images, refresh } = useModyoApi()
 const { cards, 
   shuffleCards, 
   flipCard, 
-  isFlipped, 
-  currentFlipped, 
-  isFound 
+  isFlipped,
+  isFound
 } = useCardGame(images)
 
 async function startGame() {
@@ -28,7 +27,6 @@ async function startGame() {
       <button @click="startGame">
         Iniciar Juego
       </button>
-      {{ currentFlipped }}
     </div>
     <div class="grid grid-cols-5 grid-rows-4 gap-4 h-[100dvh]">
       <GameCard

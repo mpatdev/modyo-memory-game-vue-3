@@ -5,6 +5,11 @@ export default function useCardGame(images) {
     const cards = ref([])
     const currentFlipped = ref([])
     const foundCards = ref([])
+    const stats = {
+        tries: ref(0),
+        hits: ref(0),
+        mistakes: ref(0)
+    }
     let autoFlipTimeOut = null
 
     function shuffleCards() {
@@ -48,6 +53,15 @@ export default function useCardGame(images) {
         }, 2000)
     }
 
+    function setStats(isHit) {
+        stats.tries.value += 1
+        if(isHit) {
+            stats.hits.value += 1
+        } else {
+            stats.mistakes.value += 1
+        }
+    }
+
     function validateMatch(flippedCards) {
         const cardsFlipped = flippedCards
             .value
@@ -55,9 +69,15 @@ export default function useCardGame(images) {
 
         const [firstCardFlipped] = cardsFlipped
 
+        let isHit = false
+
         if(cardsFlipped.every(card => card === firstCardFlipped)) {
             foundCards.value.push(firstCardFlipped)
+
+            isHit = true
         }
+
+        setStats(isHit)
 
         setAutoFlip()
     }
@@ -76,6 +96,6 @@ export default function useCardGame(images) {
 
     return {
         cards, shuffleCards, flipCard, isFlipped,
-        currentFlipped, isFound, onMatch
+        currentFlipped, isFound, onMatch, stats
     }
 }
