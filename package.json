@@ -1,0 +1,29 @@
+{
+  "name": "modyo-memory-game-vue-3",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "autoprefixer": "^10.4.14",
+    "axe-core": "^4.7.2",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-plugin-vue": "^9.15.1",
+    "postcss": "^8.4.27",
+    "prettier": "^3.0.0",
+    "sass": "^1.64.1",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.5",
+    "vite-plugin-eslint": "^1.8.1",
+    "vue-axe": "^3.1.2"
+  }
+}
