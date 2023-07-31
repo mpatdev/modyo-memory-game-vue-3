@@ -1,4 +1,4 @@
-import Api from '@/utils/api'
+import Api from '@/utils/Api'
 
 const modyoApi = new Api('https://fed-team.modyo.cloud')
 
