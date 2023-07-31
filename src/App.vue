@@ -9,7 +9,7 @@ const { player } = useGamePlayer()
 <template>
   <div
     role="main"
-    class="container mx-auto"
+    class="sm:container sm:mx-auto px-4"
   >
     <div
       v-if="player"

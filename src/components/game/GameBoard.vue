@@ -54,7 +54,7 @@ watch(() => stats.tries,() => {
     </div>
     <div
       v-if="cards.length > 0 && !gameover"
-      class="grid grid-cols-5 grid-rows-4 gap-4 h-full"
+      class="grid md:grid-cols-5 md:grid-rows-4 grid-cols-4 gap-4 h-full"
     >
       <GameCard
         v-for="card in cards"

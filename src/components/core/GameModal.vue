@@ -16,7 +16,9 @@
   }
 
   &__body {
-    @apply bg-white p-4 w-[450px] min-h-[200px] relative z-[5] flex items-center rounded;
+    @apply bg-white p-4 md:w-[450px] w-[85%] min-h-[200px] relative z-[5] flex items-center rounded;
+
+
   }
 }
 </style>

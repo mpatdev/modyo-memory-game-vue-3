@@ -18,8 +18,6 @@ export default function useModyoApi() {
             imagesFromResponse = imagesFromApi.entries
         }
 
-        
-
         images.value = imagesFromResponse.map(entry => {
             const { fields } = entry
             const filterKeys = ['alt_text', 'title', 'url']

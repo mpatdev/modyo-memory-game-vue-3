@@ -30,6 +30,7 @@ function startGame() {
         <div class="flex justify-end mt-4">
           <GameButton
             :disabled="!playerName"
+            class="md:w-auto w-full"
             @click="startGame"
           >
             Start

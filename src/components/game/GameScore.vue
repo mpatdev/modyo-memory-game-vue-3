@@ -27,7 +27,7 @@ const timeFormated = computed(() => formatTime(time.value))
     </div>
 
     <div class="flex gap-4">
-      <div class="w-8/12">
+      <div class="sm:w-8/12 w-full">
         <div>
           <p>
             Tries: {{ tries }} | Hits: {{ hits }} | Fails: {{ fails }} | Time: {{ timeFormated }}
@@ -37,7 +37,7 @@ const timeFormated = computed(() => formatTime(time.value))
 
       <div
         v-if="history.tries !== 0"
-        class="w-4/12 flex justify-end"
+        class="sm:w-4/12 flex sm:justify-end w-full"
       >
         Best score: Hits: {{ history.hits }} | Fails: {{ history.fails }} | Tries: {{ history.tries }} | {{ history.time }}
       </div>
