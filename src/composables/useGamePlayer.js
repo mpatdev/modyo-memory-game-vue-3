@@ -11,7 +11,6 @@ export default function useGamePlayer() {
         if(player.value) {
             localStorage.setItem('player', player.value)
         }
-        
     })
 
 

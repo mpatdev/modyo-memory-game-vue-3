@@ -1,10 +1,9 @@
-import { ref,watch, defineEmits } from 'vue'
+import { ref,watch } from 'vue'
 
-export default function useInput() {
-    const emit = defineEmits(['update:modelValue'])
+export default function useInput({ emit }) {
     const model = ref('')
 
-    watch(model.value, () => {
+    watch(model, () => {
         emit('update:modelValue', model.value)
     })
 

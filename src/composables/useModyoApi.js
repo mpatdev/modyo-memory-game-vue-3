@@ -3,11 +3,24 @@ import { ref } from 'vue'
 
 export default function useModyoApi() {
     const images = ref([])
+
+    const pageOrigins = {}
     
     const refresh = async () => {
-        const getImagesResponse = await getImages()
+        const page = Math.floor(Math.random() * 2) + 1
+        let imagesFromResponse = []
 
-        images.value = getImagesResponse.entries.map(entry => {
+        if(page in pageOrigins) {
+            imagesFromResponse = pageOrigins[pageOrigins]
+        } else {
+            const imagesFromApi = await getImages({ per_page: 10, page })
+
+            imagesFromResponse = imagesFromApi.entries
+        }
+
+        
+
+        images.value = imagesFromResponse.map(entry => {
             const { fields } = entry
             const filterKeys = ['alt_text', 'title', 'url']
             return {

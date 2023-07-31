@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue';
+import { computed } from 'vue'
 
 const props = defineProps({
   item: {
@@ -46,7 +46,6 @@ const altText = computed(() => {
           :title="altText"
           :alt="altText"
           :aria-label="altText"
-          :role="none"
           :class="{
             'grayscale': isFound
           }"
@@ -56,7 +55,11 @@ const altText = computed(() => {
         v-else
         class="w-full h-full flex items-center justify-center"
       >
-        <div class="game-card__center w-20 h-20" />
+        <img
+          src="@/assets/images/question.png"
+          alt="question sign"
+          class="h-full"
+        >
       </div>
     </Transition>
   </div>
@@ -77,17 +80,11 @@ const altText = computed(() => {
 }
 
 .game-card {
-  @apply overflow-hidden h-full border border-black rounded cursor-pointer;
+  @apply overflow-hidden h-full border-4 border-violet rounded cursor-pointer bg-secondary;
   max-height: calc(25dvh - 1em);
 
   &--flipped {
-    @apply bg-zinc-200 flex items-center justify-center;
-  }
-
-  &__center {
-    background-image: url('@/assets/images/card-background.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+    @apply flex items-center justify-center;
   }
 }
 </style>

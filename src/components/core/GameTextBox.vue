@@ -1,7 +1,9 @@
 <script setup>
 import useInput from '@/composables/useInput'
 
-const { model } = useInput()
+const emit = defineEmits(['update:modelValue'])
+
+const { model } = useInput({ emit })
 </script>
 
 <template>
@@ -13,6 +15,6 @@ const { model } = useInput()
 
 <style>
 .game-text-box {
-    @apply border-b border-gray-400 outline-none focus:border-blue-300 w-full;
+    @apply border-b border-gray-400 outline-none focus:border-violet w-full text-secondary;
 }
 </style>

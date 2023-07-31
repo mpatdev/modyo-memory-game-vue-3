@@ -1,11 +1,11 @@
 import { createApp, h, Fragment } from 'vue'
 import * as VueAxe from 'vue-axe'
+import { createPinia } from 'pinia'
 import App from '@/App.vue'
 import '@/assets/css/tailwind.css'
 
 let app = null
 
-console.log(import.meta.env.DEV)
 if (import.meta.env.DEV) {
   app = createApp({
     render: () => h(Fragment, [h(App), h(VueAxe.VueAxePopup)])
@@ -14,5 +14,9 @@ if (import.meta.env.DEV) {
 } else {
   app = createApp(App)
 }
+
+// Add Store Feature
+const pinia = createPinia()
+app.use(pinia)
 
 app.mount('#app')

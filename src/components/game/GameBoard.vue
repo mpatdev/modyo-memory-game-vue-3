@@ -1,34 +1,61 @@
 <script setup>
 import GameCard from '@/components/game/GameCard.vue'
+import GameButton from '@/components/core/GameButton.vue'
 import useModyoApi from '@/composables/useModyoApi'
 import useCardGame from '@/composables/useCardGame'
+import useScoreStore from '@/store/score'
+import { watch } from 'vue'
+import confetti from '@/utils/confetti'
 
+
+const { updateStats, setGameover } = useScoreStore()
 const { images, refresh } = useModyoApi()
 const { cards, 
   shuffleCards, 
   flipCard, 
   isFlipped,
-  isFound
+  isFound,
+  stats,
+  gameover
 } = useCardGame(images)
 
 async function startGame() {
-  
   await refresh()
-
   shuffleCards()
-
-  console.log('Iniciando Juego')
 }
+
+
+watch(() => gameover.value, (val) => {
+  if(val) {
+    confetti()
+  }
+  setGameover(val)
+})
+
+watch(() => stats.tries,() => {
+  updateStats(stats)
+}, { deep: true })
 </script>
 
 <template>
-  <div>
-    <div>
-      <button @click="startGame">
-        Iniciar Juego
-      </button>
+  <div class="game-board">
+    <div
+      v-if="cards.length === 0 || gameover"
+      class="flex w-full h-full justify-center items-center flex-col gap-4"
+    >
+      <div v-if="gameover">
+        <p class="text-center text-4xl">
+          Congratulations!
+        </p>
+      </div>
+      <GameButton @click="startGame">
+        Start Game
+      </GameButton>
     </div>
-    <div class="grid grid-cols-5 grid-rows-4 gap-4 h-[100dvh]">
+    <div
+      v-if="cards.length > 0 && !gameover"
+      class="grid grid-cols-5 grid-rows-4 gap-4 h-full"
+    >
       <GameCard
         v-for="card in cards"
         :key="card.id"
@@ -40,3 +67,10 @@ async function startGame() {
     </div>
   </div>
 </template>
+
+<style lang="scss">
+.game-board {
+  @apply flex-auto;
+  max-height: calc(100% - 100px);
+}
+</style>

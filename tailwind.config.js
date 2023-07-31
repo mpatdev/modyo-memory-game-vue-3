@@ -4,7 +4,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Victor Mono']
+        'sans': ['Lalezar']
+      },
+      colors: {
+        'primary': '#262D71',
+        'secondary': '#6939B2',
+        'violet': '#E0CCFF'
       }
     },
   },
