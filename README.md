@@ -4,7 +4,7 @@ Solución al reto técnico de Modyo hecho con:
 
 * [Vue 3](https://github.com/vuejs/core)
 * [Tailwind 3](https://github.com/tailwindlabs/tailwindcss)
-* [Pinia] (https://github.com/vuejs/pinia)
+* [Pinia](https://github.com/vuejs/pinia)
 
 Me apoye de [vue-axe](https://github.com/vue-a11y/vue-axe-next) para el tema de accesibilidad
 
@@ -64,3 +64,7 @@ El gran problema a resolver en el juego era la asincronia de las imagenes. El si
 ## Accesibilidad
 
 Como mencione al principio, me guie de [vue-axe](https://github.com/vue-a11y/vue-axe-next) para ir validando temas de accesibilidad mientras voy desarrollando e ir cubriendo lo que necesite.
+
+## Testing
+
+Realice pruebas unitarias a los componentes para comprobar que se renderizan correctamente en una situación sin alteraciones externas. De igual manera construi pruebas para las utilidades y composables del proyecto. Creo que el mayor reto que me encontre fue la construcción de las pruebas.

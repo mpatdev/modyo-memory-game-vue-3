@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { reactive, ref, watch } from 'vue';
+import { ref, watch } from 'vue';
 import sleep from '@/utils/sleep'
 const useScoreStore = defineStore('score', () => {
     const tries = ref(0)
@@ -8,13 +8,6 @@ const useScoreStore = defineStore('score', () => {
     const time = ref(0)
 
     const gameover = ref(false)
-
-    const history = reactive({
-        hits: 0,
-        tries: 0,
-        fails: 0,
-        time: 0
-    })
 
     async function gameTick() {
         if(gameover.value) return
@@ -27,14 +20,17 @@ const useScoreStore = defineStore('score', () => {
 
     watch(() => tries.value, (newValue, oldValue) => {
         if(oldValue === 0 && newValue === 1) {
+            
             gameTick()
+        }
+
+        if(newValue === 0) {
+            time.value = 0
         }
     })
 
     function setGameover(gameoverState) {
         this.gameover = gameoverState
-
-        this.time = 0
     }
 
     function updateStats({ tries, hits, fails }) {
@@ -49,7 +45,6 @@ const useScoreStore = defineStore('score', () => {
         fails,
         time,
         updateStats,
-        history,
         gameover,
         setGameover
     }

@@ -14,7 +14,7 @@ defineProps({
   }
 })
 
-const { tries, hits, fails, time, history } = storeToRefs(useScoreStore())
+const { tries, hits, fails, time } = storeToRefs(useScoreStore())
 
 const timeFormated = computed(() => formatTime(time.value))
 </script>
@@ -34,13 +34,6 @@ const timeFormated = computed(() => formatTime(time.value))
             Tries: {{ tries }} | Hits: {{ hits }} | Fails: {{ fails }} | Time: {{ timeFormated }}
           </p>
         </div>
-      </div>
-
-      <div
-        v-if="history.tries !== 0"
-        class="sm:w-4/12 flex sm:justify-end w-full"
-      >
-        Best score: Hits: {{ history.hits }} | Fails: {{ history.fails }} | Tries: {{ history.tries }} | {{ history.time }}
       </div>
     </div>
   </div>
