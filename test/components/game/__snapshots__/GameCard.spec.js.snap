@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`GameCard > Check Snapshot 1`] = `
+"<div data-v-284ef204=\\"\\" class=\\"game-card game-card--flipped\\">
+  <transition-stub data-v-284ef204=\\"\\" name=\\"flip\\" appear=\\"false\\" persisted=\\"false\\" css=\\"true\\">
+    <div data-v-284ef204=\\"\\" class=\\"w-full h-full flex items-center justify-center\\"><img data-v-284ef204=\\"\\" src=\\"/src/assets/images/question.png\\" alt=\\"question sign\\" class=\\"h-full\\"></div>
+  </transition-stub>
+</div>"
+`;

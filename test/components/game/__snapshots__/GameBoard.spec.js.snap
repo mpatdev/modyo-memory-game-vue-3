@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`GameBoard > Check Snapshot 1`] = `
+"<div class=\\"game-board\\">
+  <div class=\\"flex w-full h-full justify-center items-center flex-col gap-4\\">
+    <!--v-if--><button role=\\"button\\" class=\\"game-button\\"> Start Game </button>
+  </div>
+  <!--v-if-->
+</div>"
+`;

@@ -3,7 +3,7 @@ import GameModal from '@/components/core/GameModal.vue'
 import GameTextBox from '@/components/core/GameTextBox.vue'
 import GameButton from '@/components/core/GameButton.vue'
 
-import { ref, defineEmits } from 'vue'
+import { ref } from 'vue'
 
 const emit = defineEmits([['update:modelValue']])
 const playerName = ref('')

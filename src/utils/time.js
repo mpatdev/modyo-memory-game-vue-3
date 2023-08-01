@@ -1,4 +1,8 @@
 export function formatTime(timeInSeconds) {
+
+    if(isNaN(timeInSeconds)) {
+        throw(new Error('type not supported'))
+    }
     if(timeInSeconds === 0) return '00:00'
 
     const seconds = timeInSeconds % 60

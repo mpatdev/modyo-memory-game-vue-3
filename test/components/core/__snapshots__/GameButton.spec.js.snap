@@ -1,0 +1,3 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`GameButton > Check Snapshot 1`] = `"<button role=\\"button\\" class=\\"game-button\\"></button>"`;

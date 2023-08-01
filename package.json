@@ -6,6 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "coverage": "vitest run --coverage",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -15,17 +18,23 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
+    "@vitest/coverage-v8": "^0.33.0",
+    "@vitest/ui": "^0.33.0",
+    "@vue/test-utils": "^2.4.1",
     "autoprefixer": "^10.4.14",
     "axe-core": "^4.7.2",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.9.0",
     "eslint-plugin-vue": "^9.15.1",
+    "happy-dom": "^10.5.2",
+    "msw": "^1.2.3",
     "postcss": "^8.4.27",
     "prettier": "^3.0.0",
     "sass": "^1.64.1",
     "tailwindcss": "^3.3.3",
     "vite": "^4.4.5",
     "vite-plugin-eslint": "^1.8.1",
+    "vitest": "^0.33.0",
     "vue-axe": "^3.1.2"
   }
 }

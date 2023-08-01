@@ -13,6 +13,7 @@ defineProps({
     default: ''
   }
 })
+
 const { tries, hits, fails, time, history } = storeToRefs(useScoreStore())
 
 const timeFormated = computed(() => formatTime(time.value))

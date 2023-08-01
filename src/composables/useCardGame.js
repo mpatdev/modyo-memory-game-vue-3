@@ -1,5 +1,5 @@
 import { ref, watchEffect } from 'vue'
-import shuflle from '@/utils/shuflle'
+import shuffle from '@/utils/shuffle'
 
 export default function useCardGame(images) {
     const cards = ref([])
@@ -29,7 +29,7 @@ export default function useCardGame(images) {
             ...images.value.map(image => ({...image, id: `${image.uuid}|A`})),
             ...images.value.map(image => ({...image, id: `${image.uuid}|B`})),
         ]
-        cards.value = shuflle(imagesDuplicated)
+        cards.value = shuffle(imagesDuplicated)
     }
 
     function flipCard(card) {
@@ -107,6 +107,7 @@ export default function useCardGame(images) {
 
     return {
         cards, shuffleCards, flipCard, isFlipped,
-        currentFlipped, isFound, stats, gameover
+        currentFlipped, isFound, stats, gameover,
+        foundCards
     }
 }

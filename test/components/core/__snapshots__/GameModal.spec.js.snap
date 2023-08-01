@@ -1,0 +1,8 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`GameModal > Check Snapshot 1`] = `
+"<div class=\\"game-modal\\">
+  <div class=\\"game-modal__overlay\\"></div>
+  <div class=\\"game-modal__body\\"></div>
+</div>"
+`;

@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`GameScore > Check Snapshot 1`] = `
+"<div class=\\"game-score\\">
+  <div>
+    <h1 class=\\"font-medium text-lg uppercase\\"> Hi, </h1>
+  </div>
+  <div class=\\"flex gap-4\\">
+    <div class=\\"sm:w-8/12 w-full\\">
+      <div>
+        <p> Tries: 0 | Hits: 0 | Fails: 0 | Time: 00:00</p>
+      </div>
+    </div>
+    <!--v-if-->
+  </div>
+</div>"
+`;
