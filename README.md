@@ -68,3 +68,25 @@ Como mencione al principio, me guie de [vue-axe](https://github.com/vue-a11y/vue
 ## Testing
 
 Realice pruebas unitarias a los componentes para comprobar que se renderizan correctamente en una situación sin alteraciones externas. De igual manera construi pruebas para las utilidades y composables del proyecto. Creo que el mayor reto que me encontre fue la construcción de las pruebas.
+
+## Deployment
+
+El proyecto se desplego a vercel. En esta url [https://modyo-memory-game-vue-3.vercel.app/](https://modyo-memory-game-vue-3.vercel.app/).
+
+## Scripts
+
+Instalar paquetes
+
+`yarn install` o `npm install`
+
+Correr el proyecot en desarrollo
+
+`yarn run dev`
+
+Ejecutar el build
+
+`yarn run build`
+
+Ejecutar pruebas unitarias
+
+`yarn run test`

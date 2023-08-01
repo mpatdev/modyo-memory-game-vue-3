@@ -7,7 +7,12 @@ import useScoreStore from '@/store/score'
 import { watch } from 'vue'
 import confetti from '@/utils/confetti'
 
-
+defineProps({
+  player: {
+    type: String,
+    default: ''
+  }
+})
 const { updateStats, setGameover } = useScoreStore()
 const { images, refresh } = useModyoApi()
 const { cards, 
@@ -44,8 +49,8 @@ watch(() => stats.tries,() => {
       class="flex w-full h-full justify-center items-center flex-col gap-4"
     >
       <div v-if="gameover">
-        <p class="text-center text-4xl">
-          Congratulations!
+        <p class="text-center text-4xl uppercase">
+          Congratulations, {{ player }}!
         </p>
       </div>
       <GameButton @click="startGame">

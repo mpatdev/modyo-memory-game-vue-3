@@ -16,7 +16,7 @@ const { player } = useGamePlayer()
       class="flex flex-col h-[100dvh] gap-4 py-4"
     >
       <GameScore :player="player" />
-      <GameBoard />
+      <GameBoard :player="player" />
     </div>
     <div v-else>
       <PlayerNameModal v-model="player" />
